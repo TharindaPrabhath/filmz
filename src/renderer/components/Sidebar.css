@@ -1,0 +1,81 @@
+.sidebar a{
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar button{
+    outline: none;
+    border: none;
+}
+
+.sidebar ul{
+    list-style: none;
+}
+
+.sidebar li{
+    padding: 0.5em 0.5em;
+}
+
+.sidebar li a{
+    display: flex;
+    align-items: center;
+}
+
+.sidebar{
+    background-color: #414045;
+    height: 100%;
+    font-family: "agency-fb", sans-serif;
+    font-size: 1.4em;
+}
+
+.sidebar .app-title{
+    display: none;
+}
+
+.sidebar__content{
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0em 1em 0em;
+    box-sizing: border-box;
+    height: 95%;
+}
+
+.sidebar .menu > button{
+   cursor: pointer;
+    background-color: transparent;
+    margin: 0 0.8em;
+    -webkit-app-region: no-drag; 
+}
+
+.sidebar.active{
+    width: 300px;
+    transition: all 1s;
+}
+
+.sidebar.active .app-title{
+    padding: 0.5em;
+    display: initial;
+    font-size: 0.8em;
+    width: 100%;
+    -webkit-app-region: drag; 
+}
+
+.sidebar.active span{
+    display: initial;
+}
+
+.sidebar span{
+    display: none;
+}
+
+.tabs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.tabs span{
+    margin-left: 1em;
+}
+

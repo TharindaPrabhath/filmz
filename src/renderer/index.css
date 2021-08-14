@@ -1,0 +1,75 @@
+@font-face {
+    font-family: "agency-fb";
+    src: local("agency-fb"),
+     url("../assets//fonts/agency-fb.ttf") format("truetype");
+    font-weight: bold;
+}
+    
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+#app{
+    position: relative;
+}
+
+.titlebar-container{
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+.sidebar{
+    display: none;
+    z-index: 1;
+}
+
+.content{
+     position: fixed;
+     top: 35px;
+     width: 100%;
+     z-index: 0;
+}
+
+@media screen and (min-width: 740px) {
+    .sidebar{
+        display: initial;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        transition: all 1s ease-in;
+    }
+
+    .titlebar{
+        position: fixed;
+        left: 48px;
+        width: calc(100% - 48px);       
+    }
+
+    .titlebar.active{
+        position: fixed;
+        left: 300px;
+        width: calc(100% - 300px);
+    }
+
+    .content{
+        position: fixed;
+        left: 48px;
+        width: calc(100% - 48px);
+        transition: left 300ms ease;
+    }
+
+    .content.active{
+        position: fixed;
+        left: 300px;
+        width: calc(100% - 300px);
+        /* transition: left 300ms ease-in; */
+    }
+  }
