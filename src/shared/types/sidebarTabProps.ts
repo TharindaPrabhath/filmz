@@ -1,6 +1,7 @@
 import { IconType } from "react-icons/lib";
 
 interface SidebarTabProps {
+    id:string;
     cName:string;
     title:string;
     path:string;
