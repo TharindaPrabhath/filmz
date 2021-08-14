@@ -44,7 +44,7 @@ const Sidebar = (props: React.PropsWithChildren<SidebarProps>) => {
             <ul>
               {tabs.map((tab, index) => {
                 return (
-                  <li key={index} className={tab.cName}>
+                  <li key={index} id={tab.id} className={tab.cName}>
                     <Link to={tab.path}>
                       <tab.icon.name
                         color={tab.icon.color}
