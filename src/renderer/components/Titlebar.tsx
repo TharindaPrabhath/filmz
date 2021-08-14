@@ -8,6 +8,7 @@ import { VscChromeRestore as RestoreDown } from "react-icons/vsc";
 import { VscChromeMinimize as Minimize } from "react-icons/vsc";
 
 import "../components/Titlebar.css";
+import { APP_NAME } from "../../shared/data/appMetaData";
 
 interface TitlebarProps {
   showAppTitle: any;
@@ -42,12 +43,11 @@ const Titlebar = (props: React.PropsWithChildren<TitlebarProps>) => {
   return (
     <div className="titlebar">
       <div className="titlebar__content">
-        {/* {props.showAppTitle ? <div className="title">Deals App</div> : <></>} */}
         <div
           className="title"
           style={props.showAppTitle ? { opacity: 1 } : { opacity: 0 }}
         >
-          Deals App
+          {APP_NAME}
         </div>
 
         <div className="buttons">
