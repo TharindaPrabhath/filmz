@@ -11,6 +11,7 @@ import "../renderer/components/Sidebar.css";
 import Titlebar from "./components/Titlebar";
 import Sidebar from "./components/Sidebar";
 import Home from "./screens/Explore";
+import Actionbar from "./components/ActionBar";
 
 const App = () => {
   const [activeSidebar, setActiveSidebar] = useState(false);
@@ -26,6 +27,7 @@ const App = () => {
           }}
         />
         <div className={`content ${activeSidebar ? "active" : ""}`}>
+          <Actionbar />
           <Route path={"/"} exact component={Home} />
         </div>
       </Router>
