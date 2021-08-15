@@ -83,3 +83,7 @@
     margin-top: 1em;
 }
 
+.tabs .tab:hover{
+    background-color: #0ca852;
+}
+
