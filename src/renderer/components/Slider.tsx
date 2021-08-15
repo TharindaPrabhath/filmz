@@ -42,8 +42,6 @@ const Slider = ({ films }: { films: Film[] }) => {
     setFilm(films[index]);
   };
 
-  console.log(film?.title);
-  console.log(IMAGE_BASE_URL + film?.backdrop_path);
   return (
     <div className="slider">
       <div
