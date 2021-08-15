@@ -1,0 +1,56 @@
+.actionbar button{
+    outline: none;
+    border: none;
+}
+
+.actionbar{
+    background-color: rgb(85, 85, 85);
+    height: 3em;
+}
+
+.actionbar__content{
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actionbar__content .left-col{
+    display: flex;
+    align-items: center;
+}
+
+.left-col .search{
+    margin-left: 2em;
+    display: flex;
+    align-items: center;
+}
+
+.left-col .searchbar{
+    outline: none;
+    background-color: transparent;
+    padding: 2px 12px;
+    font-size: 1.1em;
+    color: aliceblue;
+    border: 1px solid grey;
+    border-radius: 5em;
+}
+
+.left-col .search-icon{
+    background-color: rgb(52, 58, 58);
+    padding: 3px;
+    border-radius: 5em;
+    margin-left: -2em;
+
+}
+
+.left-col .back-btn{
+    background-color: rgb(52, 58, 58);
+    padding: 2px 3px;
+    border-radius: 5em;
+}
+
+.right-col .user{
+    margin-right: 1.5em;
+    cursor: pointer;
+}
