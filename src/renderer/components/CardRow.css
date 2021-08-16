@@ -1,0 +1,10 @@
+.card-row{
+    margin-bottom: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-row__content .title{
+    font-size: 1.3em;
+}
