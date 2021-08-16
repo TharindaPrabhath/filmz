@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import Slider from "../components/Slider";
+import SlickSlider from "react-slick";
 
 import "../screens/Explore.css";
 
@@ -9,6 +10,7 @@ import requests from "../../shared/data/tmdb/requests";
 
 import { useState } from "react";
 import Film from "../../shared/types/film";
+import CardRow from "../components/CardRow";
 
 const Explore = () => {
   const [trendings, setTrendings] = useState<Film[]>([]);
@@ -23,11 +25,13 @@ const Explore = () => {
     fetchTrending();
   }, [requests.fetchTrending]);
 
-  //console.log(trendings[0]?.adult);
-
   return (
     <div className="explore">
-      <Slider films={trendings.slice(0, 5)} />
+      <div className="explore__content">
+        <Slider films={trendings.slice(0, 5)} />
+        <CardRow title="New Arrivals" films={trendings.slice(6, 16)} />
+        <CardRow title="New Arrivals" films={trendings.slice(6, 16)} />
+      </div>
     </div>
   );
 };
