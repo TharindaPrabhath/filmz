@@ -4,7 +4,8 @@
 }
 
 .actionbar{
-    background-color: rgb(85, 85, 85);
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
     height: 3em;
 }
 
