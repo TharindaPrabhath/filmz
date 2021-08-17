@@ -7,6 +7,8 @@ import "../assets/fonts/agency-fb.ttf";
 
 import "../renderer/index.css";
 import "../renderer/components/Sidebar.css";
+import "./components/Actionbar.css";
+import "./screens/Explore.css";
 
 import Titlebar from "./components/Titlebar";
 import Sidebar from "./components/Sidebar";
