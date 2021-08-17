@@ -10,6 +10,27 @@
     padding: 0;
 }
 
+/*scroll bar*/
+*::-webkit-scrollbar {
+    width: 20px;
+}
+*::-webkit-scrollbar-corner {
+    background: rgba(0,0,0,0);
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 6px;
+    border: 4px solid rgba(0,0,0,0);
+    background-clip: content-box;
+    min-width: 32px;
+    min-height: 32px;
+}
+*::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0);
+}
+
+
+
 body{
     background-color: black;
     color: white;
@@ -36,6 +57,14 @@ body{
      width: 100%;
      z-index: 0;
 }
+
+.actionbar{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
 
 @media screen and (min-width: 740px) {
     .sidebar{
@@ -72,4 +101,5 @@ body{
         width: calc(100% - 300px);
         /* transition: left 300ms ease-in; */
     }
+
   }
