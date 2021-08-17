@@ -1,6 +1,12 @@
 .explore{
+    overflow: hidden;
+}
+.explore:hover{
+    overflow: auto;
+}
+
+.explore{
     height: 100vh;
-    overflow-y: auto;
 }
 
 .most-popular{
@@ -8,4 +14,29 @@
     height: 30em;
     display: flex;
     flex-direction: column;
+}
+
+.top-rated{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+    height: 100em;
+}
+
+.top-rated__title{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2em;
+    margin-left: 1em;
+    font-size: 1.1em;
+}
+
+.top-rated__content{
+    margin: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.top-rated .card{
+    margin-bottom: 2em;
 }
