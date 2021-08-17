@@ -72,6 +72,15 @@ const HoveredCard = ({ film, show }: { film: Film; show: boolean }) => {
         <div className="info">
           <h3 className="title">{film.title || film.original_title}</h3>
           <h4 className="year">{film.release_date?.substring(0, 4)}</h4>
+          <div className="genres">
+            {film?.genre_ids.map((genre, index) => {
+              return (
+                <div key={index} className="genre">
+                  {mapGenre(genre)}
+                </div>
+              );
+            })}
+          </div>
         </div>
         <label className="rating">{film.vote_average}</label>
         <button className="wishlist-btn">Add to wishlist</button>
