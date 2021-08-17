@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Slider from "../components/Slider";
 
 import "../screens/Explore.css";
+import "../components/Card.css";
 
 import axios from "../../shared/utils/axios";
 import requests from "../../shared/data/tmdb/requests";
@@ -13,7 +14,6 @@ import CardRow from "../components/CardRow";
 import {
   centeredSlide,
   multipleSlides,
-  singleSlide,
 } from "../../shared/data/slickSliderConfigs";
 import Size from "../../shared/types/size";
 import Card from "../components/Card";
@@ -21,11 +21,19 @@ import Card from "../components/Card";
 const Explore = () => {
   const [trendings, setTrendings] = useState<Film[]>([]);
   const [mostPopulars, setMostPopulars] = useState<Film[]>([]);
+  const [newArrivals, setNewArrivals] = useState<Film[]>([]);
+  const [toprated, setToprated] = useState<Film[]>([]);
 
   useEffect(() => {
     async function fetchTrending() {
       const res = await axios.get(requests.fetchTrending);
       setTrendings(res.data.results as Film[]);
+      return res;
+    }
+
+    async function fetchNewArrival() {
+      const res = await axios.get(requests.fetchNewArrivals);
+      setNewArrivals(res.data.results as Film[]);
       return res;
     }
 
@@ -35,9 +43,21 @@ const Explore = () => {
       return res;
     }
 
+    async function fetchTopRated() {
+      const res = await axios.get(requests.fetchTopRated);
+      setToprated(res.data.results as Film[]);
+      return res;
+    }
+
     fetchTrending();
+    fetchNewArrival();
     fetchMostPopular();
-  }, [requests.fetchTrending, requests.fetchMostPopular]);
+    fetchTopRated();
+  }, [
+    requests.fetchTrending,
+    requests.fetchMostPopular,
+    requests.fetchNewArrivals,
+  ]);
 
   return (
     <div className="explore">
@@ -45,7 +65,7 @@ const Explore = () => {
         <Slider films={trendings.slice(0, 5)} />
         <CardRow
           title="New Arrivals"
-          films={trendings.slice(6, 16)}
+          films={newArrivals.slice(0, 10)}
           slickSliderConfig={multipleSlides}
           cardSize={Size.SMALL}
         />
@@ -59,10 +79,24 @@ const Explore = () => {
           />
         </div>
 
-        <h1>________</h1>
-        <h1>________</h1>
-        <h1>________</h1>
-        <h1>________</h1>
+        <CardRow
+          title="Trending"
+          films={trendings.slice(6, 16)}
+          slickSliderConfig={multipleSlides}
+          cardSize={Size.SMALL}
+        />
+
+        <div className="top-rated">
+          <div className="top-rated__title">
+            <h3>Top Rated</h3>
+          </div>
+
+          <div className="top-rated__content">
+            {toprated.slice(0, 8).map((film, index) => {
+              return <Card key={index} film={film} size={Size.SMALL} />;
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );
