@@ -3,6 +3,7 @@
     height: 24em;
     margin-right: 1em;
     transition: 100ms;
+    
 }
 
 .card__content{
@@ -10,11 +11,114 @@
     height: 100%;
 }
 
-.card:hover{
-    transform: scale(1.08);
-}
-
 .hovered-card{
     height: 100%;
     background-color: rgba(0,0,0,0.6);
+    border: 3px solid #0ca852;
+    box-sizing: border-box;
 }
+
+.hovered-card__content{
+    padding: 0.5em;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hovered-card__content .info{
+    text-align: center;
+}
+
+.hovered-card__content .info .year{
+    font-weight: 200;
+    color: rgb(214, 214, 214);
+}
+
+.hovered-card__content .rating{
+    background-color: #0ca852;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.hovered-card__content .wishlist-btn{
+    outline: none;
+    border: none;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    font-size: 1.1em;
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+.hovered-card__content .wishlist-btn:hover{
+    background: linear-gradient(#0ca852, transparent)
+}
+
+
+
+.card-extra-large{
+    position: relative;
+}
+
+.card-extra-large__content{
+    height: 24em;
+}
+
+.card-extra-large__content .footer{
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    box-shadow: 15px 0px 10px 20px rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.8);
+   
+    width: 100%;
+    height: fit-content;
+}
+
+.footer__content{
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__content .title{
+    margin-left: -0.5em;
+}
+
+.card-extra-large__content .genres{
+    display: flex;
+}
+
+.footer__bottom{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.card-extra-large__content .rating{
+    background-color: #0ca852;
+    padding: 5px 8px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.card-extra-large__content .wishlist-btn{
+    margin-top: 0.5em;
+    outline: none;
+    border: none;
+    background-color: rgba(43, 43, 43, 0.8);
+    color: white;
+    font-size: 1.1em;
+    width: 12em;
+    margin: 0.5em auto;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.card-extra-large__content .wishlist-btn:hover{
+    background: linear-gradient(#0ca852, transparent)
+}
+
